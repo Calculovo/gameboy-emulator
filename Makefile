@@ -10,7 +10,7 @@ emu: obj/readrom.o obj/emulator.o obj/main.o
 obj/readrom.o: include/readrom.hpp src/readrom.cpp
 	$(CC) $(FLAG) -c src/readrom.cpp $(INCL) -o obj/readrom.o
 
-obj/emulator.o: include/readrom.hpp include/emulator.hpp src/readrom.cpp
+obj/emulator.o: include/readrom.hpp include/emulator.hpp src/emulator.cpp
 	$(CC) $(FLAG) -c src/emulator.cpp $(INCL) -o obj/emulator.o
 
 obj/main.o: include/emulator.hpp src/main.cpp
