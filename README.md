@@ -1,4 +1,4 @@
 Para construir o emulador:
-    $make emu
+    `$make emu`
 Para rodar o emulador:
-    $./emu <nome da rom>
+    `$./emu <nome da rom>`
