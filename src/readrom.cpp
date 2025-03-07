@@ -1,17 +1,11 @@
-#include <iostream>
-#include <fstream>
+#include "readrom.hpp"
+#include <exception>
 
-int main() {
-    std::ifstream input;
-    input.open("testroms/cpu_instrs.gb");
-    char read;
-    unsigned char low = 0, high = 0;
-    while (1) {
-        input.get(read);
-        std::cout << (short) high << "\t" << (short) low << ":" << (short) read << "\n";
-        low++;
-        if (low == 0) high++;
-        if (input.peek() == EOF) break;
-    }
-    return 0;
-}
+Cart::Cart() {};
+
+void Cart::loadRom(std::string filename) {
+    file.open(filename);
+    if (!file.is_open())
+        throw std::runtime_error("Arquivo nao encontrado.");
+    return;
+};
